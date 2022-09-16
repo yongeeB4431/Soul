@@ -1,3 +1,6 @@
 src/*.class
 src/*.swo
 src/*.swp
+*.swo
+*.swp
+
