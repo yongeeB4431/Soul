@@ -14,11 +14,18 @@ public class Data{
 	private String diary;
 	private Scanner scan;
 	private JSONObject info;
+	private Colors white,green,yellow,reset,yellow_underlined;
 
 	public Data(){
 		
 		scan = new Scanner(System.in);
 		info = new JSONObject();
+		white = Colors.WHITE;
+		green = Colors.GREEN;
+		yellow = Colors.YELLOW;
+		reset = Colors.RESET;
+		yellow_underlined= Colors.YELLOW_UNDERLINED;
+
 
 	}
 
@@ -30,29 +37,29 @@ public class Data{
 	public String Time(){
 
 		return LocalTime.now().toString();
-
 	}
 
 	public void title(){
 		
-		System.out.print("Title: ");
+		System.out.print(yellow.get() + "Title: " + white.get());
 		title = scan.nextLine();
 	
 	}
 
 	public void mood(){
 
-		System.out.print("Mood: ");
+		System.out.print(green.get() + "Mood: " + white.get());
 		mood = scan.next();
 	}
 
 	public void diary(){
-		System.out.println("Your day: ");
+		System.out.println(yellow_underlined.get() + "Your day: " +  yellow.get());
 		scan.useDelimiter("\\t");
 		while(true){
 			diary = scan.next();
 			break;
 		}
+		System.out.print(reset.get());
 	}
 
 	public void executeData(){
